@@ -25,7 +25,7 @@ view: orders {
   dimension: site_image {
 type: string
 sql: ${TABLE}.user_id ;;
-    html: <img src="https://logo-core.clearbit.com/looker.com" /> ;;
+    html: <img src="https://www.nutrisystem.com/images/global/NS-logo.svg" /> ;;
 }
 
   measure: count {
