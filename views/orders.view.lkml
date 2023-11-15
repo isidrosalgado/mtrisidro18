@@ -23,10 +23,10 @@ view: orders {
   }
 
   dimension: site_image {
-    type: string
-    sql: ${TABLE} ;;
-    html: "<img src='https://www.nutrisystem.com/images/global/NS-logo.svg' width='200' height='35' align='right'/>" ;;
-  }
+type: string
+sql: ${TABLE}.user_id ;;
+html: <img src="https://www.nutrisystem.com/images/global/NS-logo.svg/{{value}}" width="75" height="75" /> ;;
+}
 
   measure: count {
     type: count
