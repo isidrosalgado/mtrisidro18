@@ -20,6 +20,14 @@ view: order_items {
     }
   }
 
+  measure: dynamic_sum {
+    type: sum
+    sql: ${TABLE}.{% parameter item_to_add_up %} ;;
+    label_from_parameter: item_to_add_up
+    value_format_name: "usd"
+
+  }
+
   dimension: id {
     primary_key: yes
     type: number
