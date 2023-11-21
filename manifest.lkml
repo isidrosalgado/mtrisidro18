@@ -1,3 +1,3 @@
 project_name: "mtrisidro18"
 
-new_lookml_runtime: yes
+new_lookml_runtime: no
