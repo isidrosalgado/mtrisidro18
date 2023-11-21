@@ -2,6 +2,24 @@ view: order_items {
   sql_table_name: demo_db.order_items ;;
   drill_fields: [id]
 
+  parameter: item_to_add_up {
+    type: unquoted
+    allowed_value: {
+      label: "Total Sale Price"
+      value: "sale_price"
+    }
+
+    allowed_value: {
+      label: "Total Cost"
+      value: "cost"
+    }
+
+    allowed_value: {
+      label: "Total Profit"
+      value: "profit"
+    }
+  }
+
   dimension: id {
     primary_key: yes
     type: number
