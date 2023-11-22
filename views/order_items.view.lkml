@@ -6,7 +6,7 @@ view: order_items {
 
   dimension: department_name {
     type: string
-    sql: ${TABLE}.f_department_name ;;
+    sql: ${TABLE} ;;
     hidden: no
   }
 
