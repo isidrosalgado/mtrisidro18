@@ -1,4 +1,9 @@
 {
+"department_name": "Nombre Del Departamento",
+"grouping_2": "Agrupación 2",
+"grouping_1": "Agrupación 1",
+"grouping_level_1": "Nivel de agrupación 1",
+"grouping_level_2": "Nivel de agrupación 2",
 "department": "Departamento",
 "tier": "Escalon",
 "category": "Categoria",
