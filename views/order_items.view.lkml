@@ -20,6 +20,18 @@ view: order_items {
     }
   }
 
+  parameter: grouping_object_type_2 {
+    label: "grouping_level_2"
+    allowed_value: {
+      label: ""
+      value: ""
+    }
+    allowed_value: {
+      label: "department"
+      value: "Department"
+    }
+  }
+
   measure: dynamic_sum {
     type: sum
     #sql: ${TABLE} ;;
