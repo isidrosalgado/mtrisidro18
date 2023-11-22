@@ -3,6 +3,13 @@ view: order_items {
   drill_fields: [id]
 
   #####################################new test
+
+  dimension: department_name {
+    type: string
+    sql: ${TABLE}.f_department_name ;;
+    hidden: no
+  }
+
   parameter: grouping_object_type_1 {
     label: "grouping_level_1"
     allowed_value: {
@@ -11,7 +18,7 @@ view: order_items {
     }
     allowed_value: {
       label: "department"
-      value: "department"
+      value: "Department"
     }
     allowed_value: {
       label: "tier"
@@ -47,7 +54,7 @@ view: order_items {
     }
     allowed_value: {
       label: "department"
-      value: "department"
+      value: "Department"
     }
     allowed_value: {
       label: "tier"
