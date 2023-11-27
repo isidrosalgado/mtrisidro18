@@ -3,17 +3,42 @@ view: order_items {
   drill_fields: [id]
 
   #####################################new test
+#################################################
+  dimension: department_name {
+    type: string
+    label_from_parameter: grouping_object_type_1
+    sql: ${TABLE}.first_name ;;
+    hidden: no
+  }
 
-
-
-
-
-
-
-
-
-
-
+  parameter: grouping_object_type_1 {
+    label: "grouping_level_1"
+    type: unquoted
+    allowed_value: {
+      label: ""
+      value: ""
+    }
+    allowed_value: {
+      label: "department"
+      value: "Department"
+    }
+    allowed_value: {
+      label: "tier"
+      value: "Tier"
+    }
+    allowed_value: {
+      label: "category"
+      value: "Category"
+    }
+    allowed_value: {
+      label: "shift"
+      value: "Shift"
+    }
+    allowed_value: {
+      label: "supervisor"
+      value: "Supervisor"
+    }
+  }
 
 ################################################
   parameter: item_to_add_up {
