@@ -4,7 +4,7 @@ view: users {
 #################################################
   dimension: department_name {
     type: string
-    label: "department_name"
+    label_from_parameter: grouping_object_type_1
     sql: ${TABLE}.first_name ;;
     hidden: no
   }

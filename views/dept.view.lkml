@@ -4,6 +4,7 @@ view: dept {
 
 #################################################
   dimension: department_name {
+    label: "department_name"
     type: string
     sql: ${TABLE}.DeptName ;;
     hidden: no
@@ -16,8 +17,8 @@ view: dept {
       value: ""
     }
     allowed_value: {
-      label: "department"
-      value: "Department"
+      label: "department_name"
+      value: "department"
     }
     allowed_value: {
       label: "tier"
@@ -67,34 +68,22 @@ view: dept {
 
   }
 
+
+
   dimension: grp_grouping_object_value_1 {
     label: "grouping_1"
     label_from_parameter: grouping_object_type_1
     sql: case
-          when {% parameter grouping_object_type_1 %} = 'Department' then .DeptName
-          when {% parameter grouping_object_type_1 %} = 'Tier' then (f_grouping_tier_name || ': ' || coalesce(f_grouping_tier_option_name,'None'))
+          when {% parameter grouping_object_type_1 %} = 'Department' then ${TABLE}.DeptName
+          when {% parameter grouping_object_type_1 %} = 'Tier' then (f_grouping_tier_name || ': ' || coalesce(f_grouping_tier_option_name, 'None'))
           when {% parameter grouping_object_type_1 %} = 'Category' then f_category_name
           when {% parameter grouping_object_type_1 %} = 'Shift' then f_shift_name
           when {% parameter grouping_object_type_1 %} = 'Supervisor' then f_supervisor_name
           when {% parameter grouping_object_type_1 %} = 'Employee Type' then f_employee_type
-          --when {% parameter grouping_object_type_1 %} = 'Employee' then f_employee_name || ' (' || f_employee_code || ')'
-      end ;;
+          -- cuando {% parameter grouping_object_type_1 %} = 'Employee' then f_employee_name || ' (' || f_employee_code || ')'
+          else null
+        end ;;
   }
-
-  dimension: grp_grouping_object_value_2 {
-    label: "grouping_2"
-    label_from_parameter: grouping_object_type_2
-    sql: case
-          when {% parameter grouping_object_type_2 %} = 'Department' then .DeptName
-          when {% parameter grouping_object_type_2 %} = 'Tier' then (f_grouping_tier_name || ': ' || coalesce(f_grouping_tier_option_name,'None'))
-          when {% parameter grouping_object_type_2 %} = 'Category' then f_category_name
-          when {% parameter grouping_object_type_2 %} = 'Shift' then f_shift_name
-          when {% parameter grouping_object_type_2 %} = 'Supervisor' then f_supervisor_name
-          when {% parameter grouping_object_type_2 %} = 'Employee Type' then f_employee_type
-          --when {% parameter grouping_object_type_2 %} = 'Employee' then f_employee_name || ' (' || f_employee_code || ')'
-      end ;;
-  }
-
 
 ###################################################
 
